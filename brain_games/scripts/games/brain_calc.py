@@ -1,14 +1,14 @@
 import random
 from brain_games.scripts.brain_games import name
-print('Answer "yes" if the number is even, otherwise answer "no"')
+print('What is the result of the expression?')
 
 
 def calc():
     count = 0
-    signs = {'+', '-', '*'}
+    signs = ['+', '-', '*']
     while count < 3:
-        num1 = random.randint(1, 1000)
-        num2 = random.randint(1, 1000)
+        num1 = random.randint(1, 49)
+        num2 = random.randint(1, 49)
         sign = random.choice(signs)
         if sign == '+':
             result = num1 + num2
@@ -18,7 +18,7 @@ def calc():
             result = num1 * num2
         print('Question:', num1, sign, num2)
         answer = input('Your answer: ')
-        if answer != result:
+        if int(answer) != result:
             print(f"'{answer}' is wrong answer ;(. "
                   f"Correct answer was '{result}'")
             print(f"Let's try again, {name}!")
@@ -30,3 +30,7 @@ def calc():
 
 def main():
     calc()
+
+
+if __name__ == '__main__':
+    main()
